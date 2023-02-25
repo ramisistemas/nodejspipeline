@@ -11,10 +11,6 @@ node {
        sh 'npm test'
      }
    }
-   stage('Docker Build & Push') {
-     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-      }
-   }
    stage('Build Docker Image') {
             agent{
             label 'Docker_Slave'
