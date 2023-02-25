@@ -18,7 +18,7 @@ node {
             steps {
                 script{
                  sh"""
-                      docker login -u ramisistemas -p dckr_pat_UU4G2KcmDJkNfGnJhTwE14XlQfs                      
+                      echo 'Hello World'                                           
                     """
                 }
                 echo 'succesfull'
