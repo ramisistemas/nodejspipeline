@@ -22,8 +22,8 @@ node {
             steps {
                 script{
                  sh"""
-                      sudo docker build -t ramisistemas/mavenjenkins:1.0 .
-                      docker push ramisistemas/mavenjenkins:1.0
+                      sudo docker build -t ramisistemas/mavenjenkins:2.0 .
+                      docker push ramisistemas/mavenjenkins:2.0
                     """
                 }
                 echo 'succesfull'
