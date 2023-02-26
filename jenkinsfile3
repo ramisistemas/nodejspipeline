@@ -9,8 +9,4 @@ pipeline {
       }
     }
   }
-  stage('Docker Build & Push') {
-     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-     }
-   }
 }
