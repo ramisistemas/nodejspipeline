@@ -9,5 +9,10 @@ pipeline {
         sh 'npm config ls'
       }
     }
+    stage('Verificación SCM') {
+     checkout scm
+     sh "git rev-parse --short HEAD > .git/commit-id"                        
+     gitcommit = readFile('.git/commit-id').trim()
+   }
   }
 }
