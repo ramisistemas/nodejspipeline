@@ -1,14 +1,12 @@
 pipeline {
-    agent { label 'master'}
-
-        stages {
-            stage ('install') {
-                steps {                    
-                      sh "npm install"                     
-                }
-            }
-            stage ('test') {
-                steps {                  
-                        sh "npm test"                  
-                }
-            }
+  agent any
+ 
+  tools {nodejs "nodejs"}
+ 
+  stage('test') {
+     nodejs(nodeJSInstallationName: 'nodejs') {
+       sh 'npm install --only=dev'
+       sh 'npm test'
+     }
+   }
+}
