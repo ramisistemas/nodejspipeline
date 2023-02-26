@@ -10,7 +10,7 @@ pipeline {
     }
   }
   stage('Docker Build & Push') {
-     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+     docker login -u ramisistemas -p dckr_pat_UU4G2KcmDJkNfGnJhTwE14XlQfs {
      }
    }
 }
