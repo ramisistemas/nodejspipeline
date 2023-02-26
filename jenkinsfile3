@@ -3,15 +3,14 @@ pipeline {
  
   tools {nodejs "nodejs"}
  
-  stages {
-    stage('test') {
-      steps {        
-        sh 'npm install --only=dev'
-        sh 'npm test'
-      }
-    }
-    stage('Docker Build & Push') {
-     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {   
+  stage('test') {
+     nodejs(nodeJSInstallationName: 'nodejs') {
+       sh 'npm install --only=dev'
+       sh 'npm test'
      }
-  }
+   }
+   stage('Docker Build & Push') {
+     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+     }
+   }
 }
