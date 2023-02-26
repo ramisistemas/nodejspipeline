@@ -5,8 +5,7 @@ pipeline {
  
   stages {
     stage('test') {
-      steps {
-        sh 'npm config ls'
+      steps {        
         sh 'npm install --only=dev'
         sh 'npm test'
       }
