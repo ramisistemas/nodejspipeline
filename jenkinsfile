@@ -11,18 +11,8 @@ node {
        sh 'npm test'
      }
    }
-   stage('Build Docker Image') {
-            agent{
-            label 'Docker_Slave'
-            } 
-            steps {
-                script{
-                 sh"""
-                      echo 'Hello World'                                           
-                    """
-                }
-                echo 'succesfull'
-            }
-        
-        }
+   stage('Docker Build & Push') {
+     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+      }
+   }
 }
