@@ -3,10 +3,11 @@ pipeline {
  
   tools {nodejs "nodejs"}
  
-  stage('test') {
-     nodejs(nodeJSInstallationName: 'nodejs') {
-       sh 'npm install --only=dev'
-       sh 'npm test'
-     }
-   }
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
+    }
+  }
 }
